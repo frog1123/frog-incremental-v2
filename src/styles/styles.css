@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+  --background-color: #0c0c0c;
+  --default-text-color: #fff;
+  --custom-green: #20d804;
+  --custom-green-transparent: #20d80420;
+  --frog-pond-accent: #0e0e0e;
+  --color-disabled: #1c1c1c;
+}
+
+* {
+  transition-duration: 250ms;
+}
+
+html,
+body {
+  background-color: var(--background-color);
+  color: var(--default-text-color);
+  margin: 0;
+  padding: 0;
+  padding-bottom: 80px;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1,
+p {
+  margin: 0;
+}
+
+#frog-gaining-text-container {
+  width: max-content;
+  margin: auto;
+  font-size: 28px;
+}
+
+#frog-amount-text-container {
+  width: max-content;
+  margin: auto;
+  font-size: 50px;
+}
+
+.button-disabled {
+  border: 2px solid var(--color-disabled);
+  cursor: default !important;
+}
