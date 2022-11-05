@@ -3,7 +3,7 @@ const minifyJs = require('gulp-minify');
 const minifyCss = require('gulp-clean-css');
 const minifyHtml = require('gulp-htmlmin');
 
-const outputName = 'dist';
+const outputName = 'docs';
 
 gulp.task('build', async function () {
   gulp
