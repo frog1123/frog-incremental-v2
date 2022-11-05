@@ -3,7 +3,7 @@ const minifyJs = require('gulp-minify');
 const minifyCss = require('gulp-clean-css');
 const minifyHtml = require('gulp-htmlmin');
 
-const outputName = 'docs';
+const outputName = 'dist';
 
 gulp.task('build', async function () {
   gulp
@@ -13,7 +13,7 @@ gulp.task('build', async function () {
 
   gulp
     .src(['src/scripts/core/*.js'])
-    .pipe(minifyJs({ noSource: true }))
+    .pipe(minifyJs({ noSource: true, ext: { min: '.js' } }))
     .pipe(gulp.dest(`${outputName}/scripts/core`));
 
   gulp
