@@ -31,7 +31,7 @@ gulp.task('build', async function () {
   // changelog
   gulp
     .src('changelog/changelog-scripts/*.js')
-    .pipe(minifyJs({ compatibility: 'ie8' }))
+    .pipe(minifyJs({ noSource: true, ext: { min: '.js' } }))
     .pipe(gulp.dest(`${outputName}/changelog-scripts`));
 
   gulp

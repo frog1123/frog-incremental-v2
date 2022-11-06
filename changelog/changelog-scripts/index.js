@@ -45,8 +45,6 @@ const createChangelogs = obj => {
     contentLine.textContent = `- ${c}`;
 
     changelogContent.appendChild(contentLine);
-
-    console.log(c);
   });
 
   node.appendChild(titleContainer);
