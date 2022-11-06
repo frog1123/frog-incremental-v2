@@ -26,6 +26,8 @@ gulp.task('build', async function () {
     .pipe(minifyHtml({ collapseWhitespace: true }))
     .pipe(gulp.dest(outputName));
 
+  gulp.src('src/assets/*').pipe(gulp.dest(`${outputName}/assets`));
+
   // changelog
   gulp
     .src('changelog/*.css')

@@ -8,6 +8,7 @@
   --frog-pond-accent: #0e0e0e;
   --color-disabled: #1c1c1c;
   --sidebar-hover-color: #161616;
+  --selection-color: #76e05c;
 }
 
 * {
@@ -31,6 +32,11 @@ p {
 
 button {
   cursor: pointer;
+}
+
+::selection {
+  background: var(--selection-color);
+  color: #fff;
 }
 
 #frog-gaining-text-container {
