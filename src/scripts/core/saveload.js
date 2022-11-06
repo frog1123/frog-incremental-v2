@@ -3,7 +3,11 @@ const saveData = () => {
 };
 
 const loadData = () => {
-  data = JSON.parse(atob(localStorage.getItem('player')));
+  const predata = localStorage.getItem('player');
+  if (predata === null) return;
+
+  data = JSON.parse(atob(predata));
+  console.log(data);
 
   player.frogAmount = new Decimal(data.frogAmount);
   player.currentPage = data.currentPage;
