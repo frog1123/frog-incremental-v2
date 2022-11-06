@@ -1,5 +1,5 @@
 let player = {
-  frogAmount: new Decimal('1e10'),
+  frogAmount: new Decimal('3210e13'),
   currentPage: 'page-main',
   ponds: {
     frog: {

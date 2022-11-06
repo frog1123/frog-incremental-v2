@@ -1,5 +1,6 @@
 const upgradePond = tier => {
   if (player.frogAmount.gte(player.ponds.frog[`tier${tier}`].cost)) {
+    playSound();
     player.frogAmount = player.frogAmount.sub(player.ponds.frog[`tier${tier}`].cost);
     player.ponds.frog[`tier${tier}`].lvl = player.ponds.frog[`tier${tier}`].lvl.add('1');
     player.ponds.frog[`tier${tier}`].amountBought = player.ponds.frog[`tier${tier}`].amountBought.add('1');

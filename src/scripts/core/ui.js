@@ -38,6 +38,7 @@ document.getElementById('switch-to-page-main').onclick = () => switchPage('page-
 document.getElementById('switch-to-page-settings').onclick = () => switchPage('page-settings');
 
 document.getElementById('frog-pond-multiplier-buy-btn').onclick = () => upgradeMultiplier();
+document.getElementById('frog-pond-multiplier-buy-max-btn').onclick = () => upgradeMultiplierMax();
 document.getElementById('pond-t1-buy-btn').onclick = () => upgradePond(1);
 document.getElementById('pond-t2-buy-btn').onclick = () => upgradePond(2);
 document.getElementById('pond-t3-buy-btn').onclick = () => upgradePond(3);
