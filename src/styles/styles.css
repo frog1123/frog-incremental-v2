@@ -9,6 +9,7 @@
   --color-disabled: #1c1c1c;
   --sidebar-hover-color: #161616;
   --selection-color: #76e05c;
+  --color-disabled-transperant: #1c1c1c80;
 }
 
 * {

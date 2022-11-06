@@ -26,13 +26,19 @@ const switchPage = pageToSwitchTo => {
 document.getElementById('sidebar-icon-btn').onclick = () => {
   document.getElementById('sidebar-container').style.transform = 'translateX(0)';
   document.getElementById('sidebar-container').style.boxShadow = '0 8px 24px #191919';
+  document.getElementById('sidebar-shown-overlay').style.display = 'block';
 };
 
 // sidebar close
-document.getElementById('sidebar-close-btn').onclick = () => {
+
+const closeSidebar = () => {
   document.getElementById('sidebar-container').style.transform = 'translateX(-100%)';
   document.getElementById('sidebar-container').style.boxShadow = 'none';
+  document.getElementById('sidebar-shown-overlay').style.display = 'none';
 };
+
+document.getElementById('sidebar-close-btn').onclick = () => closeSidebar();
+document.getElementById('sidebar-shown-overlay').onclick = () => closeSidebar();
 
 document.getElementById('switch-to-page-main').onclick = () => switchPage('page-main');
 document.getElementById('switch-to-page-settings').onclick = () => switchPage('page-settings');

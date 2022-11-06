@@ -7,7 +7,8 @@ const changelogArray = [
   { name: 'initial-prerelease-v0.0.3a', date: '11/5/2022', content: ['added 4th pond', 'added save and load buttons', 'auto load-btn', 'can preserve page'] },
   { name: 'initial-prerelease-v0.0.3b', date: '11/5/2022', content: ['fixed issue with first load'] },
   { name: 'initial-prerelease-v0.0.4a', date: '11/6/2022', content: ['made layout responsive'] },
-  { name: 'initial-prerelease-v0.0.5a', date: '11/6/2022', content: ['added buy max multiplier button', 'added sound effects on buy'] }
+  { name: 'initial-prerelease-v0.0.5a', date: '11/6/2022', content: ['added buy max multiplier button', 'added sound effects on buy'] },
+  { name: 'initial-prerelease-v0.0.6a', date: '11/6/2022', content: ['sidebar closes when clicked anywhere besides sidebar'] }
 ];
 
 const createChangelogs = obj => {
