@@ -16,6 +16,13 @@
   height: 30px;
 }
 
+@media screen and (max-width: 400px) {
+  #sidebar-icon-img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
 #sidebar-container {
   position: fixed;
   background-color: var(--background-color);
@@ -24,6 +31,12 @@
   transform: translateX(-100%);
   transition-duration: 250ms;
   transition: all 250ms;
+}
+
+@media screen and (max-width: 400px) {
+  #sidebar-container {
+    width: 260px;
+  }
 }
 
 #sidebar-title-container {
@@ -48,6 +61,13 @@
 #sidebar-close-img {
   width: 30px;
   height: 30px;
+}
+
+@media screen and (max-width: 400px) {
+  #sidebar-close-img {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 #sidebar-content-container {

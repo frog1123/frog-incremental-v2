@@ -12,6 +12,12 @@
   margin-top: 4px;
 }
 
+@media screen and (max-width: 650px) {
+  #frog-pond-multiplier-container p {
+    font-size: 12px;
+  }
+}
+
 #frog-pond-multiplier-buttons-container .frog-pond-multiplier-buy-btn {
   width: 150px;
   height: 36px;
@@ -23,13 +29,27 @@
   cursor: pointer;
 }
 
+@media screen and (max-width: 600px) {
+  #frog-pond-multiplier-buttons-container .frog-pond-multiplier-buy-btn {
+    width: 100px;
+  }
+}
+
 #frog-pond-multiplier-buttons-container .frog-pond-multiplier-buy-btn p {
   color: var(--default-text-color);
   margin: 0;
 }
 
+@media screen and (max-width: 600px) {
+  #frog-pond-multiplier-buttons-container .frog-pond-multiplier-buy-btn p {
+    font-size: 12px;
+  }
+}
+
 #frog-pond-multiplier-buttons-container {
   display: grid;
+  width: max-content;
+  margin: auto;
   grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
 }

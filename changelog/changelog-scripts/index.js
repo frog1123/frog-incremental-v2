@@ -2,10 +2,11 @@ const changelogArray = [
   { name: 'initial-prerelease-v0.0.1a', date: '11/5/2022', content: ['added 1st, 2nd 3rd frog ponds', 'added multipler upgrade'] },
   { name: 'initial-prerelease-v0.0.1b', date: '11/5/2022', content: ['minified with gulp'] },
   { name: 'initial-prerelease-v0.0.1c', date: '11/5/2022', content: ['switched from github pages to vercel'] },
-  { name: 'initial-prerelease-v0.0.2a', date: '11/5/2022', content: ['add sidebar to switch pages'] },
+  { name: 'initial-prerelease-v0.0.2a', date: '11/5/2022', content: ['added sidebar to switch pages'] },
   { name: 'initial-prerelease-v0.0.2b', date: '11/5/2022', content: ['fixed issue with assets not loading correctly'] },
   { name: 'initial-prerelease-v0.0.3a', date: '11/5/2022', content: ['added 4th pond', 'added save and load buttons', 'auto load-btn', 'can preserve page'] },
-  { name: 'initial-prerelease-v0.0.3b', date: '11/5/2022', content: ['fixed issue with first load'] }
+  { name: 'initial-prerelease-v0.0.3b', date: '11/5/2022', content: ['fixed issue with first load'] },
+  { name: 'initial-prerelease-v0.0.4a', date: '11/6/2022', content: ['made layout responsive'] }
 ];
 
 const createChangelogs = obj => {

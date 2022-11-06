@@ -16,18 +16,58 @@
   padding-left: 10px;
   padding-right: 10px;
   box-sizing: border-box;
+  place-items: center;
+}
+
+@media screen and (max-width: 1250px) {
+  .pond-container {
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+    grid-template-columns: 4fr 6fr 4fr;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .pond-container {
+    height: 40px;
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+    grid-template-columns: 6fr 4fr 6fr;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .pond-container {
+    height: 40px;
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+    grid-template-columns: 8fr 4fr 4fr;
+  }
 }
 
 .pond-container .pond-info {
   display: grid;
-  height: 100%;
+  height: max-content;
   width: fit-content;
   place-items: center;
-  grid-template-rows: 50% 50%;
+  grid-template-rows: max-content max-content;
+  margin-right: auto;
 }
 
 .pond-container .pond-info * {
   margin-right: auto;
+}
+
+@media screen and (max-width: 750px) {
+  .pond-container .pond-info * {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .pond-container .pond-info * {
+    font-size: 10px;
+  }
 }
 
 .pond-container .pond-lvl-container {
@@ -36,18 +76,43 @@
   place-items: center;
 }
 
+@media screen and (max-width: 650px) {
+  .pond-container .pond-lvl-container p {
+    font-size: 12px;
+  }
+}
+
 .pond-container button {
   background-color: var(--background-color);
   margin-top: auto;
   margin-bottom: auto;
   border-radius: 20px;
-  height: 90%;
   cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 650px) {
+  .pond-container button {
+    border-radius: 12px;
+  }
 }
 
 .pond-container button p {
   color: var(--default-text-color);
   font-size: 16px;
+}
+
+@media screen and (max-width: 650px) {
+  .pond-container button p {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .pond-container {
+    font-size: 10px;
+  }
 }
 
 .default-pond-buy-btn {
@@ -60,4 +125,16 @@
 
 .pond-info-small-text {
   font-size: 12px;
+}
+
+@media screen and (max-width: 650px) {
+  .pond-info-small-text {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .pond-cost-text {
+    display: none;
+  }
 }
