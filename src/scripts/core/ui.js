@@ -51,5 +51,20 @@ document.getElementById('pond-t3-buy-btn').onclick = () => upgradePond(3);
 document.getElementById('pond-t4-buy-btn').onclick = () => upgradePond(4);
 
 document.getElementById('save-btn').onclick = () => saveData();
-
-document.getElementById('load-btn').onclick = () => loadData();
+document.getElementById('load-btn').onclick = () => {
+  const predata = localStorage.getItem('player');
+  if (predata === null) return;
+  data = JSON.parse(atob(predata));
+  loadData(data);
+};
+document.getElementById('export-btn').onclick = () => exportData();
+document.getElementById('import-btn').onclick = () => importData();
+document.getElementById('toggle-sound-btn').onclick = () => {
+  if (player.settings.playSound === false) {
+    player.settings.playSound = true;
+    return;
+  } else {
+    player.settings.playSound = false;
+    return;
+  }
+};

@@ -2,13 +2,7 @@ const saveData = () => {
   localStorage.setItem('player', btoa(JSON.stringify(player)));
 };
 
-const loadData = () => {
-  const predata = localStorage.getItem('player');
-  if (predata === null) return;
-
-  data = JSON.parse(atob(predata));
-  console.log(data);
-
+const loadData = data => {
   player.frogAmount = new Decimal(data.frogAmount);
   player.currentPage = data.currentPage;
 
@@ -45,4 +39,19 @@ const loadData = () => {
   player.settings.saveLastPage = data.settings.saveLastPage;
 
   player.devSettings.loopSpeed = data.devSettings.loopSpeed;
+};
+
+const exportData = () => {
+  let exportData = btoa(JSON.stringify(player));
+  navigator.clipboard.writeText(exportData);
+
+  alert('save copied to clipboard');
+};
+
+const importData = () => {
+  const importedData = JSON.parse(atob(prompt('input your save (this will overwrite your current save)')));
+  if (importedData === null) return;
+
+  loadData(importedData);
+  saveData();
 };

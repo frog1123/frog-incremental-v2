@@ -1,5 +1,5 @@
 let player = {
-  frogAmount: new Decimal('3210e13'),
+  frogAmount: new Decimal('10'),
   currentPage: 'page-main',
   ponds: {
     frog: {
@@ -41,7 +41,8 @@ let player = {
   },
   settings: {
     uiUpdateSpeed: 20,
-    saveLastPage: false
+    saveLastPage: false,
+    playSound: true
   },
   devSettings: {
     loopSpeed: 20
