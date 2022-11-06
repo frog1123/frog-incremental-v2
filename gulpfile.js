@@ -30,9 +30,14 @@ gulp.task('build', async function () {
 
   // changelog
   gulp
-    .src('changelog/*.css')
+    .src('changelog/changelog-scripts/*.js')
+    .pipe(minifyJs({ compatibility: 'ie8' }))
+    .pipe(gulp.dest(`${outputName}/changelog-scripts`));
+
+  gulp
+    .src('changelog/changelog-styles/*.css')
     .pipe(minifyCss({ compatibility: 'ie8' }))
-    .pipe(gulp.dest(`${outputName}/changelog`));
+    .pipe(gulp.dest(`${outputName}/changelog-styles`));
 
   gulp
     .src('changelog/*.html')
