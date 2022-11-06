@@ -7,6 +7,7 @@
   --custom-green-transparent: #20d80420;
   --frog-pond-accent: #0e0e0e;
   --color-disabled: #1c1c1c;
+  --sidebar-hover-color: #161616;
 }
 
 * {
@@ -26,6 +27,10 @@ body {
 h1,
 p {
   margin: 0;
+}
+
+button {
+  cursor: pointer;
 }
 
 #frog-gaining-text-container {

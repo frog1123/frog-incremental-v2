@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="styles/styles.css">
   <link rel="stylesheet" href="styles/ponds.css">
   <link rel="stylesheet" href="styles/multiplier.css">
+  <link rel="stylesheet" href="styles/sidebar.css">
   <script src="scripts/core/break_eternity.min.js" defer></script>
   <script src="scripts/core/format.js" defer></script>
   <script src="scripts/core/player.js" defer></script>
@@ -20,63 +21,90 @@
 </head>
 
 <body dir="ltr">
-  <h1 id="frog-amount-text-container"><span id="frog-amount-text"></span> Frogs</h1>
-  <p id="frog-gaining-text-container">Gaining <span id="frog-gaining-text"></span> Frogs/s</p>
-  <div id="frog-pond-multiplier-container">
-    <div id="frog-pond-multiplier-buttons-container">
-      <button id="frog-pond-multiplier-buy-btn" class="frog-pond-multiplier-buy-btn default-multiplier-buy-btn">
-        <p>Cost <span id="frog-pond-multiplier-buy-btn-cost-text"></span></p>
-      </button>
-      <button id="frog-pond-multiplier-buy-max-btn" class="frog-pond-multiplier-buy-btn default-multiplier-buy-btn">
-        <p>coming soon</p>
-      </button>
-    </div>
-    <p>
-      Multiply all pond effectiveness by ×<span id="frog-pond-multiplier-effectiveness-text"></span><br />
-      Current multiplier ×<span id="frog-pond-multiplier-current-multiplier-text"></span>
-    </p>
+  <div id="sidebar-icon-container">
+    <button id="sidebar-icon-btn">
+      <img id="sidebar-icon-img" src="assets/menu.svg" />
+    </button>
   </div>
-  <div id="frog-pond-container" class="pond-containers-container">
-    <div class="pond-container">
-      <div class="pond-info">
-        <p>1st Pond <span class="pond-info-small-text">
-            ×<span id="pond-t1-mult-text"></span> (<span id="pond-t1-amount-bought-text"></span>)</p>
-        <p>Generating <span id="pond-t1-generating-text"></span> Frogs/s</p>
+  <div id="sidebar-container">
+    <div id="sidebar-content-container">
+      <div id="sidebar-title-container">
+        <p>menu</p>
+        <button id="sidebar-close-btn">
+          <img id="sidebar-close-img" src="assets/close.svg" />
+        </button>
       </div>
-      <div class="pond-lvl-container">
-        <p id="pond-t1-lvl-text"></p>
-      </div>
-      <button class="default-pond-buy-btn" id="pond-t1-buy-btn">
-        <p>Cost <span id="pond-t1-cost-text"></span></p>
+      <button id="switch-to-page-main">
+        <p>page main</p>
+      </button>
+      <button id="switch-to-page-2">
+        <p>page 2</p>
       </button>
     </div>
-    <div class="pond-container">
-      <div class="pond-info">
-        <p>2nd Pond <span class="pond-info-small-text">
-            ×<span id="pond-t2-mult-text"></span> (<span id="pond-t2-amount-bought-text"></span>)</p>
-        <p>Generating <span id="pond-t2-generating-text"></span> 1st Ponds/s</p>
+  </div>
+  <div id="page-main" style="display: block;">
+    <h1 id="frog-amount-text-container"><span id="frog-amount-text"></span> Frogs</h1>
+    <p id="frog-gaining-text-container">Gaining <span id="frog-gaining-text"></span> Frogs/s</p>
+    <div id="frog-pond-multiplier-container">
+      <div id="frog-pond-multiplier-buttons-container">
+        <button id="frog-pond-multiplier-buy-btn" class="frog-pond-multiplier-buy-btn default-multiplier-buy-btn">
+          <p>Cost <span id="frog-pond-multiplier-buy-btn-cost-text"></span></p>
+        </button>
+        <button id="frog-pond-multiplier-buy-max-btn" class="frog-pond-multiplier-buy-btn default-multiplier-buy-btn">
+          <p>coming soon</p>
+        </button>
       </div>
-      <div class="pond-lvl-container">
-        <p id="pond-t2-lvl-text"></p>
-      </div>
-      <button class="default-pond-buy-btn" id="pond-t2-buy-btn">
-        <p>Cost <span id="pond-t2-cost-text"></span></p>
-      </button>
+      <p>
+        Multiply all pond effectiveness by ×<span id="frog-pond-multiplier-effectiveness-text"></span><br />
+        Current multiplier ×<span id="frog-pond-multiplier-current-multiplier-text"></span>
+      </p>
     </div>
-    <div class="pond-container">
-      <div class="pond-info">
-        <p>3rd Pond <span class="pond-info-small-text">
-            ×<span id="pond-t3-mult-text"></span> (<span id="pond-t3-amount-bought-text"></span>)</p>
-        <p>Generating <span id="pond-t3-generating-text"></span> 2nd Ponds/s</p>
+    <div id="frog-pond-container" class="pond-containers-container">
+      <div class="pond-container">
+        <div class="pond-info">
+          <p>1st Pond <span class="pond-info-small-text">
+              ×<span id="pond-t1-mult-text"></span> (<span id="pond-t1-amount-bought-text"></span>)</p>
+          <p>Generating <span id="pond-t1-generating-text"></span> Frogs/s</p>
+        </div>
+        <div class="pond-lvl-container">
+          <p id="pond-t1-lvl-text"></p>
+        </div>
+        <button class="default-pond-buy-btn" id="pond-t1-buy-btn">
+          <p>Cost <span id="pond-t1-cost-text"></span></p>
+        </button>
       </div>
-      <div class="pond-lvl-container">
-        <p id="pond-t3-lvl-text"></p>
+      <div class="pond-container">
+        <div class="pond-info">
+          <p>2nd Pond <span class="pond-info-small-text">
+              ×<span id="pond-t2-mult-text"></span> (<span id="pond-t2-amount-bought-text"></span>)</p>
+          <p>Generating <span id="pond-t2-generating-text"></span> 1st Ponds/s</p>
+        </div>
+        <div class="pond-lvl-container">
+          <p id="pond-t2-lvl-text"></p>
+        </div>
+        <button class="default-pond-buy-btn" id="pond-t2-buy-btn">
+          <p>Cost <span id="pond-t2-cost-text"></span></p>
+        </button>
       </div>
-      <button class="default-pond-buy-btn" id="pond-t3-buy-btn">
-        <p>Cost <span id="pond-t3-cost-text"></span></p>
-      </button>
+      <div class="pond-container">
+        <div class="pond-info">
+          <p>3rd Pond <span class="pond-info-small-text">
+              ×<span id="pond-t3-mult-text"></span> (<span id="pond-t3-amount-bought-text"></span>)</p>
+          <p>Generating <span id="pond-t3-generating-text"></span> 2nd Ponds/s</p>
+        </div>
+        <div class="pond-lvl-container">
+          <p id="pond-t3-lvl-text"></p>
+        </div>
+        <button class="default-pond-buy-btn" id="pond-t3-buy-btn">
+          <p>Cost <span id="pond-t3-cost-text"></span></p>
+        </button>
+      </div>
     </div>
-
+  </div>
+  <div id="page-2" style="display: none;">
+    <h1 style="margin: auto; width: max-content;">
+      page 2
+    </h1>
   </div>
 </body>
 
