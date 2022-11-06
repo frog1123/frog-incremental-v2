@@ -1,5 +1,6 @@
 let player = {
-  frogAmount: new Decimal('2000'),
+  frogAmount: new Decimal('1e10'),
+  currentPage: 'page-main',
   ponds: {
     frog: {
       multiplier: {
@@ -28,11 +29,19 @@ let player = {
         costIncrease: new Decimal('100'),
         mult: new Decimal('1'),
         amountBought: new Decimal('0')
+      },
+      tier4: {
+        lvl: new Decimal('0'),
+        cost: new Decimal('1e8'),
+        costIncrease: new Decimal('100'),
+        mult: new Decimal('1'),
+        amountBought: new Decimal('0')
       }
     }
   },
   settings: {
-    uiUpdateSpeed: 20
+    uiUpdateSpeed: 20,
+    saveLastPage: false
   },
   devSettings: {
     loopSpeed: 20

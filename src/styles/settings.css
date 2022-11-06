@@ -1,0 +1,9 @@
+#settings-container {
+  width: max-content;
+  margin: auto;
+}
+
+#settings-container button {
+  width: 200px;
+  height: 60px;
+}

@@ -8,6 +8,7 @@ const updateUI = () => {
   updatePondUI(1);
   updatePondUI(2);
   updatePondUI(3);
+  updatePondUI(4);
 
   setTimeout(updateUI, 50);
 };
@@ -15,8 +16,9 @@ const updateUI = () => {
 const switchPage = pageToSwitchTo => {
   // hide all pages
   document.getElementById('page-main').style.display = 'none';
-  document.getElementById('page-2').style.display = 'none';
+  document.getElementById('page-settings').style.display = 'none';
 
+  player.currentPage = pageToSwitchTo;
   document.getElementById(pageToSwitchTo).style.display = 'block';
 };
 
@@ -33,8 +35,14 @@ document.getElementById('sidebar-close-btn').onclick = () => {
 };
 
 document.getElementById('switch-to-page-main').onclick = () => switchPage('page-main');
-document.getElementById('switch-to-page-2').onclick = () => switchPage('page-2');
+document.getElementById('switch-to-page-settings').onclick = () => switchPage('page-settings');
 
 document.getElementById('frog-pond-multiplier-buy-btn').onclick = () => upgradeMultiplier();
 document.getElementById('pond-t1-buy-btn').onclick = () => upgradePond(1);
 document.getElementById('pond-t2-buy-btn').onclick = () => upgradePond(2);
+document.getElementById('pond-t3-buy-btn').onclick = () => upgradePond(3);
+document.getElementById('pond-t4-buy-btn').onclick = () => upgradePond(4);
+
+document.getElementById('save-btn').onclick = () => saveData();
+
+document.getElementById('load-btn').onclick = () => loadData();

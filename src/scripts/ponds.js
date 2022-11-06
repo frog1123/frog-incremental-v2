@@ -20,6 +20,8 @@ const generatePonds = () => {
 
   player.frogAmount = player.frogAmount.add(ponds.tier1.lvl.div(speed).mul(ponds.tier1.mult).mul(mult));
   ponds.tier1.lvl = ponds.tier1.lvl.add(ponds.tier2.lvl.div(speed).mul(ponds.tier2.mult).mul(mult));
+  ponds.tier2.lvl = ponds.tier2.lvl.add(ponds.tier3.lvl.div(speed).mul(ponds.tier3.mult).mul(mult));
+  ponds.tier3.lvl = ponds.tier3.lvl.add(ponds.tier4.lvl.div(speed).mul(ponds.tier4.mult).mul(mult));
 };
 
 const updatePondUI = tier => {
