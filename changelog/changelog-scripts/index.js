@@ -66,6 +66,22 @@ const createChangelogs = obj => {
   document.getElementById('changelogs-container').appendChild(node);
 };
 
+const createJumpToLinks = obj => {
+  const node = document.createElement('a');
+  const nodeClass = document.createAttribute('class');
+  nodeClass.value = 'jump-to-link';
+  const nodeHref = document.createAttribute('href');
+  nodeHref.value = `#${obj.name}`;
+  node.setAttributeNode(nodeHref);
+  node.setAttributeNode(nodeClass);
+  node.textContent = obj.name;
+
+  document.getElementById('jump-to-container').appendChild(node);
+};
+
 window.onload = () => {
-  changelogArray.forEach(obj => createChangelogs(obj));
+  changelogArray.forEach(obj => {
+    createChangelogs(obj);
+    createJumpToLinks(obj);
+  });
 };

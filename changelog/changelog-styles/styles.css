@@ -8,6 +8,7 @@ body {
   padding: 0;
   padding-bottom: 80px;
   font-family: 'Roboto', sans-serif;
+  scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {
@@ -67,4 +68,29 @@ body {
 .update-name {
   width: max-content;
   margin: auto;
+}
+
+#jump-to-container {
+  width: 80%;
+  margin: auto;
+  background-color: #0f0f0e;
+  height: max-content;
+  margin-top: 20px;
+  border-radius: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.jump-to-link {
+  font-size: 18px;
+  text-decoration: none;
+  color: gray;
+  cursor: pointer;
+  transition-duration: 50ms;
+}
+
+.jump-to-link:hover {
+  color: white;
 }
