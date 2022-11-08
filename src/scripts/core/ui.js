@@ -4,18 +4,21 @@ const updateUI = () => {
     player.ponds.frog.tier1.lvl.mul(player.ponds.frog.tier1.mult).mul(Decimal.pow(player.ponds.frog.multiplier.effectiveness, player.ponds.frog.multiplier.lvl))
   );
 
-  updateMultiplierUI();
-  updateRiverUI();
-  updatePondUI(1);
-  updatePondUI(2);
-  updatePondUI(3);
-  updatePondUI(4);
-  updatePondUI(5);
-  updatePondUI(6);
-  updatePondUI(7);
-  updatePondUI(8);
-  updatePondUI(9);
-  updatePondUI(10);
+  if (player.currentPage === 'page-main') {
+    console.log('hello');
+    updateMultiplierUI();
+    updateRiverUI();
+    updatePondUI(1);
+    updatePondUI(2);
+    updatePondUI(3);
+    updatePondUI(4);
+    updatePondUI(5);
+    updatePondUI(6);
+    updatePondUI(7);
+    updatePondUI(8);
+    updatePondUI(9);
+    updatePondUI(10);
+  }
 
   setTimeout(updateUI, 50);
 };
