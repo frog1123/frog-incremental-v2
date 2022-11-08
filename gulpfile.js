@@ -6,7 +6,7 @@ const babel = require('gulp-babel');
 
 const outputName = 'dist';
 
-gulp.task('build', () => {
+gulp.task('build', async () => {
   gulp
     .src(['src/scripts/*.js'])
     .pipe(babel({ presets: ['@babel/preset-env'] }))
