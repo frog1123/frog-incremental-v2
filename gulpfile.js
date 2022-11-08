@@ -2,22 +2,26 @@ const gulp = require('gulp');
 const minifyJs = require('gulp-minify');
 const minifyCss = require('gulp-clean-css');
 const minifyHtml = require('gulp-htmlmin');
+const babel = require('gulp-babel');
 
 const outputName = 'dist';
 
-gulp.task('build', async function () {
+gulp.task('build', () => {
   gulp
     .src(['src/scripts/*.js'])
+    .pipe(babel({ presets: ['@babel/preset-env'] }))
     .pipe(minifyJs({ noSource: true, ext: { min: '.js' } }))
     .pipe(gulp.dest(`${outputName}/scripts`));
 
   gulp
     .src(['src/scripts/core/*.js'])
+    .pipe(babel({ presets: ['@babel/preset-env'] }))
     .pipe(minifyJs({ noSource: true, ext: { min: '.js' } }))
     .pipe(gulp.dest(`${outputName}/scripts/core`));
 
   gulp
     .src(['src/scripts/utils/*.js'])
+    .pipe(babel({ presets: ['@babel/preset-env'] }))
     .pipe(minifyJs({ noSource: true, ext: { min: '.js' } }))
     .pipe(gulp.dest(`${outputName}/scripts/utils`));
 
@@ -36,6 +40,7 @@ gulp.task('build', async function () {
   // changelog
   gulp
     .src('changelog/changelog-scripts/*.js')
+    .pipe(babel({ presets: ['@babel/preset-env'] }))
     .pipe(minifyJs({ noSource: true, ext: { min: '.js' } }))
     .pipe(gulp.dest(`${outputName}/changelog-scripts`));
 
