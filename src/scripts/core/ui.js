@@ -38,6 +38,7 @@ const switchPage = pageToSwitchTo => {
   // hide all pages
   document.getElementById('page-main').style.display = 'none';
   document.getElementById('page-settings').style.display = 'none';
+  document.getElementById('page-tutorial').style.display = 'none';
 
   player.currentPage = pageToSwitchTo;
   document.getElementById(pageToSwitchTo).style.display = 'block';
@@ -63,6 +64,7 @@ document.getElementById('sidebar-shown-overlay').onclick = () => closeSidebar();
 
 document.getElementById('switch-to-page-main').onclick = () => switchPage('page-main');
 document.getElementById('switch-to-page-settings').onclick = () => switchPage('page-settings');
+document.getElementById('switch-to-page-tutorial').onclick = () => switchPage('page-tutorial');
 
 document.getElementById('save-btn').onclick = () => saveData();
 document.getElementById('load-btn').onclick = () => {

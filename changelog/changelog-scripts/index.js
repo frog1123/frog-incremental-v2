@@ -21,7 +21,8 @@ const changelogArray = [
       'styled scrollbar',
       'fixed sidebar overlay to cover whole page'
     ]
-  }
+  },
+  { name: 'initial-prerelease-v0.0.9a', date: '11/7/2022', content: ['frog amount can bow be seen on any page', 'plans for a tutorial page', 'changelog can be accesed through sidebar'] }
 ];
 
 const createChangelogs = obj => {

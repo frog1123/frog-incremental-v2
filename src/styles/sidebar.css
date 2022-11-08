@@ -88,7 +88,14 @@
   padding-bottom: 4px;
 }
 
-#sidebar-content-container button:hover {
+#sidebar-content-container a {
+  width: 100%;
+  background-color: var(--background-color);
+  border: none;
+}
+
+#sidebar-content-container button:hover,
+#sidebar-content-container a:hover {
   background-color: var(--sidebar-hover-color);
 }
 
