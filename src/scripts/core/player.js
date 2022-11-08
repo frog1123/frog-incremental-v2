@@ -3,11 +3,18 @@ let player = {
   currentPage: 'page-main',
   ponds: {
     frog: {
+      highestTier: 4,
       multiplier: {
         lvl: new Decimal('0'),
         effectiveness: new Decimal('1.1'),
         cost: new Decimal('1000'),
         costIncrease: new Decimal('10')
+      },
+      river: {
+        lvl: new Decimal('0'),
+        cost: new Decimal('20'),
+        costIncrease: new Decimal('20'),
+        effectiveness: new Decimal('2')
       },
       tier1: {
         lvl: new Decimal('0'),
@@ -31,9 +38,23 @@ let player = {
         amountBought: new Decimal('0')
       },
       tier4: {
-        lvl: new Decimal('0'),
+        lvl: new Decimal('20'),
         cost: new Decimal('1e8'),
         costIncrease: new Decimal('100'),
+        mult: new Decimal('1'),
+        amountBought: new Decimal('0')
+      },
+      tier5: {
+        lvl: new Decimal('0'),
+        cost: new Decimal('1e12'),
+        costIncrease: new Decimal('1000'),
+        mult: new Decimal('1'),
+        amountBought: new Decimal('0')
+      },
+      tier6: {
+        lvl: new Decimal('0'),
+        cost: new Decimal('1e16'),
+        costIncrease: new Decimal('1000'),
         mult: new Decimal('1'),
         amountBought: new Decimal('0')
       }

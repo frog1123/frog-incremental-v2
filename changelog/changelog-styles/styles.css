@@ -21,7 +21,7 @@ body {
 
 .changelog-container {
   display: grid;
-  grid-template-rows: max-content max-content;
+  grid-auto-flow: row;
 }
 
 .changelog-container * {
@@ -49,4 +49,9 @@ body {
   border-radius: 20px;
   background-color: gray;
   margin-bottom: 10px;
+}
+
+.update-name {
+  width: max-content;
+  margin: auto;
 }

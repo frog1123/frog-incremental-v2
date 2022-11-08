@@ -17,22 +17,29 @@ const generatePonds = () => {
   const speed = 1000 / player.devSettings.loopSpeed;
   let ponds = player.ponds.frog;
 
-  const mult = Decimal.pow(player.ponds.frog.multiplier.effectiveness, player.ponds.frog.multiplier.lvl);
+  const mult = Decimal.pow(player.ponds.frog.multiplier.effectiveness, player.ponds.frog.multiplier.lvl).mul(Decimal.pow(player.ponds.frog.river.effectiveness, player.ponds.frog.river.lvl));
 
-  player.frogAmount = player.frogAmount.add(ponds.tier1.lvl.div(speed).mul(ponds.tier1.mult).mul(mult));
+  ponds.tier5.lvl = ponds.tier5.lvl.add(ponds.tier6.lvl.div(speed).mul(ponds.tier6.mult).mul(mult));
   ponds.tier1.lvl = ponds.tier1.lvl.add(ponds.tier2.lvl.div(speed).mul(ponds.tier2.mult).mul(mult));
   ponds.tier2.lvl = ponds.tier2.lvl.add(ponds.tier3.lvl.div(speed).mul(ponds.tier3.mult).mul(mult));
   ponds.tier3.lvl = ponds.tier3.lvl.add(ponds.tier4.lvl.div(speed).mul(ponds.tier4.mult).mul(mult));
+  ponds.tier4.lvl = ponds.tier4.lvl.add(ponds.tier5.lvl.div(speed).mul(ponds.tier5.mult).mul(mult));
+  player.frogAmount = player.frogAmount.add(ponds.tier1.lvl.div(speed).mul(ponds.tier1.mult).mul(mult));
 };
 
 const updatePondUI = tier => {
   document.getElementById(`pond-t${tier}-generating-text`).textContent = fv(
-    player.ponds.frog[`tier${tier}`].lvl.mul(player.ponds.frog[`tier${tier}`].mult).mul(Decimal.pow(player.ponds.frog.multiplier.effectiveness, player.ponds.frog.multiplier.lvl))
+    player.ponds.frog[`tier${tier}`].lvl
+      .mul(player.ponds.frog[`tier${tier}`].mult)
+      .mul(Decimal.pow(player.ponds.frog.multiplier.effectiveness, player.ponds.frog.multiplier.lvl))
+      .mul(Decimal.pow(player.ponds.frog.river.effectiveness, player.ponds.frog.river.lvl))
   );
   document.getElementById(`pond-t${tier}-lvl-text`).textContent = fvnd(player.ponds.frog[`tier${tier}`].lvl);
   document.getElementById(`pond-t${tier}-cost-text`).textContent = fv(player.ponds.frog[`tier${tier}`].cost);
   document.getElementById(`pond-t${tier}-mult-text`).textContent = fv(
-    player.ponds.frog[`tier${tier}`].mult.mul(Decimal.pow(player.ponds.frog.multiplier.effectiveness, player.ponds.frog.multiplier.lvl))
+    player.ponds.frog[`tier${tier}`].mult
+      .mul(Decimal.pow(player.ponds.frog.multiplier.effectiveness, player.ponds.frog.multiplier.lvl))
+      .mul(Decimal.pow(player.ponds.frog.river.effectiveness, player.ponds.frog.river.lvl))
   );
   document.getElementById(`pond-t${tier}-amount-bought-text`).textContent = player.ponds.frog[`tier${tier}`].amountBought;
 

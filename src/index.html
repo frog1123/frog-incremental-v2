@@ -10,8 +10,9 @@
   <link rel="stylesheet" href="styles/multiplier.css">
   <link rel="stylesheet" href="styles/sidebar.css">
   <link rel="stylesheet" href="styles/settings.css">
+  <link rel="stylesheet" href="styles/prestige.css">
   <script src="scripts/core/break_eternity.min.js" defer></script>
-  <script src="scripts/core/format.js" defer></script>
+  <script src="scripts/utils/format.js" defer></script>
   <script src="scripts/core/player.js" defer></script>
   <script src="scripts/core/saveload.js" defer></script>
   <script src="scripts/core/ui.js" defer></script>
@@ -19,6 +20,8 @@
   <script src="scripts/core/sound.js" defer></script>
   <script src="scripts/ponds.js" defer></script>
   <script src="scripts/multiplier.js" defer></script>
+  <script src="scripts/rivers.js" defer></script>
+  <script src="scripts/resets.js" defer></script>
   <script src="scripts/core/loop.js" defer></script>
   <link rel="icon" href="assets/icon.svg">
   <title>frog incremental</title>
@@ -67,7 +70,7 @@
     </div>
     <div class="line"></div>
     <div id="frog-pond-container" class="pond-containers-container">
-      <div class="pond-container">
+      <div id="pond-t1-container" class="pond-container">
         <div class="pond-info">
           <p>1st Pond <span class="pond-info-small-text">
               ×<span id="pond-t1-mult-text"></span> (<span id="pond-t1-amount-bought-text"></span>)</p>
@@ -80,7 +83,7 @@
           <p><span class="pond-cost-text">Cost</span> <span id="pond-t1-cost-text"></span></p>
         </button>
       </div>
-      <div class="pond-container">
+      <div id="pond-t2-container" class="pond-container">
         <div class="pond-info">
           <p>2nd Pond <span class="pond-info-small-text">
               ×<span id="pond-t2-mult-text"></span> (<span id="pond-t2-amount-bought-text"></span>)</p>
@@ -93,7 +96,7 @@
           <p><span class="pond-cost-text">Cost</span> <span id="pond-t2-cost-text"></span></p>
         </button>
       </div>
-      <div class="pond-container">
+      <div id="pond-t3-container" class="pond-container">
         <div class="pond-info">
           <p>3rd Pond <span class="pond-info-small-text">
               ×<span id="pond-t3-mult-text"></span> (<span id="pond-t3-amount-bought-text"></span>)</p>
@@ -106,7 +109,7 @@
           <p><span class="pond-cost-text">Cost</span> <span id="pond-t3-cost-text"></span></p>
         </button>
       </div>
-      <div class="pond-container">
+      <div id="pond-t4-container" class="pond-container">
         <div class="pond-info">
           <p>4th Pond <span class="pond-info-small-text">
               ×<span id="pond-t4-mult-text"></span> (<span id="pond-t4-amount-bought-text"></span>)</p>
@@ -117,6 +120,43 @@
         </div>
         <button class="default-pond-buy-btn" id="pond-t4-buy-btn">
           <p><span class="pond-cost-text">Cost</span> <span id="pond-t4-cost-text"></span></p>
+        </button>
+      </div>
+      <div id="pond-t5-container" class="pond-container" style="display: none;">
+        <div class="pond-info">
+          <p>5th Pond <span class="pond-info-small-text">
+              ×<span id="pond-t5-mult-text"></span> (<span id="pond-t5-amount-bought-text"></span>)</p>
+          <p>Generating <span id="pond-t5-generating-text"></span> 4th Ponds/s</p>
+        </div>
+        <div class="pond-lvl-container">
+          <p id="pond-t5-lvl-text"></p>
+        </div>
+        <button class="default-pond-buy-btn" id="pond-t5-buy-btn">
+          <p><span class="pond-cost-text">Cost</span> <span id="pond-t5-cost-text"></span></p>
+        </button>
+      </div>
+      <div id="pond-t6-container" class="pond-container" style="display: none;">
+        <div class="pond-info">
+          <p>6th Pond <span class="pond-info-small-text">
+              ×<span id="pond-t6-mult-text"></span> (<span id="pond-t6-amount-bought-text"></span>)</p>
+          <p>Generating <span id="pond-t6-generating-text"></span> 5th Ponds/s</p>
+        </div>
+        <div class="pond-lvl-container">
+          <p id="pond-t6-lvl-text"></p>
+        </div>
+        <button class="default-pond-buy-btn" id="pond-t6-buy-btn">
+          <p><span class="pond-cost-text">Cost</span> <span id="pond-t6-cost-text"></span></p>
+        </button>
+      </div>
+    </div>
+    <div id="prestige-container">
+      <div class="prestige-btn-container">
+        <div class="prestige-info-container">
+          <p class="prestige-info-big-text"><span id="river-amount-text"></span> Rivers</p>
+          <p class="prestige-info-small-text">Requires <span id="river-requires-text"></span> Ponds</p>
+        </div>
+        <button id="river-prestige-btn" class="prestige-btn green-prestige-btn">
+          <p id="river-btn-text"></p>
         </button>
       </div>
     </div>

@@ -17,6 +17,11 @@ gulp.task('build', async function () {
     .pipe(gulp.dest(`${outputName}/scripts/core`));
 
   gulp
+    .src(['src/scripts/utils/*.js'])
+    .pipe(minifyJs({ noSource: true, ext: { min: '.js' } }))
+    .pipe(gulp.dest(`${outputName}/scripts/utils`));
+
+  gulp
     .src('src/styles/*.css')
     .pipe(minifyCss({ compatibility: 'ie8' }))
     .pipe(gulp.dest(`${outputName}/styles`));

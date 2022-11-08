@@ -6,10 +6,17 @@ const loadData = data => {
   player.frogAmount = new Decimal(data.frogAmount);
   player.currentPage = data.currentPage;
 
+  player.ponds.frog.highestTier = data.ponds.frog.highestTier;
+
   player.ponds.frog.multiplier.lvl = new Decimal(data.ponds.frog.multiplier.lvl);
   player.ponds.frog.multiplier.effectiveness = new Decimal(data.ponds.frog.multiplier.effectiveness);
   player.ponds.frog.multiplier.cost = new Decimal(data.ponds.frog.multiplier.cost);
   player.ponds.frog.multiplier.costIncrease = new Decimal(data.ponds.frog.multiplier.costIncrease);
+
+  player.ponds.frog.river.lvl = data.ponds.frog.river.lvl;
+  player.ponds.frog.river.cost = data.ponds.frog.river.cost;
+  player.ponds.frog.river.costIncrease = data.ponds.frog.river.costIncrease;
+  player.ponds.frog.river.effectiveness = data.ponds.frog.river.effectiveness;
 
   player.ponds.frog.tier1.lvl = new Decimal(data.ponds.frog.tier1.lvl);
   player.ponds.frog.tier1.cost = new Decimal(data.ponds.frog.tier1.cost);

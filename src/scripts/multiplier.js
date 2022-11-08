@@ -32,6 +32,7 @@ const upgradeMultiplierMax = () => {
 
       upgradeMultiplier();
     }
+    upgradeMultiplier();
   }
 };
 

@@ -5,13 +5,26 @@ const updateUI = () => {
   );
 
   updateMultiplierUI();
+  updateRiverUI();
   updatePondUI(1);
   updatePondUI(2);
   updatePondUI(3);
   updatePondUI(4);
+  updatePondUI(5);
+  updatePondUI(6);
 
   setTimeout(updateUI, 50);
 };
+
+document.getElementById('river-prestige-btn').onclick = () => upgradeRiver();
+document.getElementById('frog-pond-multiplier-buy-btn').onclick = () => upgradeMultiplier();
+document.getElementById('frog-pond-multiplier-buy-max-btn').onclick = () => upgradeMultiplierMax();
+document.getElementById('pond-t1-buy-btn').onclick = () => upgradePond(1);
+document.getElementById('pond-t2-buy-btn').onclick = () => upgradePond(2);
+document.getElementById('pond-t3-buy-btn').onclick = () => upgradePond(3);
+document.getElementById('pond-t4-buy-btn').onclick = () => upgradePond(4);
+document.getElementById('pond-t5-buy-btn').onclick = () => upgradePond(5);
+document.getElementById('pond-t6-buy-btn').onclick = () => upgradePond(6);
 
 const switchPage = pageToSwitchTo => {
   // hide all pages
@@ -42,13 +55,6 @@ document.getElementById('sidebar-shown-overlay').onclick = () => closeSidebar();
 
 document.getElementById('switch-to-page-main').onclick = () => switchPage('page-main');
 document.getElementById('switch-to-page-settings').onclick = () => switchPage('page-settings');
-
-document.getElementById('frog-pond-multiplier-buy-btn').onclick = () => upgradeMultiplier();
-document.getElementById('frog-pond-multiplier-buy-max-btn').onclick = () => upgradeMultiplierMax();
-document.getElementById('pond-t1-buy-btn').onclick = () => upgradePond(1);
-document.getElementById('pond-t2-buy-btn').onclick = () => upgradePond(2);
-document.getElementById('pond-t3-buy-btn').onclick = () => upgradePond(3);
-document.getElementById('pond-t4-buy-btn').onclick = () => upgradePond(4);
 
 document.getElementById('save-btn').onclick = () => saveData();
 document.getElementById('load-btn').onclick = () => {
