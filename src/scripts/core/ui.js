@@ -12,6 +12,10 @@ const updateUI = () => {
   updatePondUI(4);
   updatePondUI(5);
   updatePondUI(6);
+  updatePondUI(7);
+  updatePondUI(8);
+  updatePondUI(9);
+  updatePondUI(10);
 
   setTimeout(updateUI, 50);
 };
@@ -25,6 +29,10 @@ document.getElementById('pond-t3-buy-btn').onclick = () => upgradePond(3);
 document.getElementById('pond-t4-buy-btn').onclick = () => upgradePond(4);
 document.getElementById('pond-t5-buy-btn').onclick = () => upgradePond(5);
 document.getElementById('pond-t6-buy-btn').onclick = () => upgradePond(6);
+document.getElementById('pond-t7-buy-btn').onclick = () => upgradePond(7);
+document.getElementById('pond-t8-buy-btn').onclick = () => upgradePond(8);
+document.getElementById('pond-t9-buy-btn').onclick = () => upgradePond(9);
+document.getElementById('pond-t10-buy-btn').onclick = () => upgradePond(10);
 
 const switchPage = pageToSwitchTo => {
   // hide all pages

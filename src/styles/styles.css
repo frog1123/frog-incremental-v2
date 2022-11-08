@@ -40,6 +40,19 @@ button {
   color: #fff;
 }
 
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f0f0e;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background: #1c1c1c;
+}
+
 #frog-amount-text-container {
   width: max-content;
   margin: auto;

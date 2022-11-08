@@ -57,6 +57,34 @@ let player = {
         costIncrease: new Decimal('1000'),
         mult: new Decimal('1'),
         amountBought: new Decimal('0')
+      },
+      tier7: {
+        lvl: new Decimal('0'),
+        cost: new Decimal('1e24'),
+        costIncrease: new Decimal('1000'),
+        mult: new Decimal('1'),
+        amountBought: new Decimal('0')
+      },
+      tier8: {
+        lvl: new Decimal('0'),
+        cost: new Decimal('1e30'),
+        costIncrease: new Decimal('1000'),
+        mult: new Decimal('1'),
+        amountBought: new Decimal('0')
+      },
+      tier9: {
+        lvl: new Decimal('0'),
+        cost: new Decimal('1e36'),
+        costIncrease: new Decimal('1e4'),
+        mult: new Decimal('1'),
+        amountBought: new Decimal('0')
+      },
+      tier10: {
+        lvl: new Decimal('0'),
+        cost: new Decimal('1e50'),
+        costIncrease: new Decimal('1e4'),
+        mult: new Decimal('1'),
+        amountBought: new Decimal('0')
       }
     }
   },

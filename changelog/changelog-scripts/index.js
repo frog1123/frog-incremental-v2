@@ -1,5 +1,5 @@
 const changelogArray = [
-  { name: 'initial-prerelease-v0.0.1a', date: '11/5/2022', content: ['added 1st, 2nd 3rd frog ponds', 'added multipler upgrade'] },
+  { name: 'initial-prerelease-v0.0.1a', date: '11/5/2022', content: ['added 1st, 2nd, 3rd frog ponds', 'added multipler upgrade'] },
   { name: 'initial-prerelease-v0.0.1b', date: '11/5/2022', content: ['minified with gulp'] },
   { name: 'initial-prerelease-v0.0.1c', date: '11/5/2022', content: ['switched from github pages to vercel'] },
   { name: 'initial-prerelease-v0.0.2a', date: '11/5/2022', content: ['added sidebar to switch pages'] },
@@ -10,7 +10,18 @@ const changelogArray = [
   { name: 'initial-prerelease-v0.0.5a', date: '11/6/2022', content: ['added buy max multiplier button', 'added sound effects on buy'] },
   { name: 'initial-prerelease-v0.0.6a', date: '11/6/2022', content: ['sidebar closes when clicked anywhere besides sidebar'] },
   { name: 'initial-prerelease-v0.0.7a', date: '11/6/2022', content: ['added export and import button', 'added toggle soudn effects button'] },
-  { name: 'initial-prerelease-v0.0.8a', date: '11/7/2022', updateName: 'The River Update', content: ['added rivers (prestige system)', 'added 5th and 6th ponds'] }
+  { name: 'initial-prerelease-v0.0.8a', date: '11/7/2022', updateName: 'The River Update', content: ['added rivers (prestige system)', 'added 5th and 6th ponds'] },
+  {
+    name: 'initial-prerelease-v0.0.8b',
+    date: '11/8/2022',
+    content: [
+      'added 7th, 8th, 9th, frog ponds',
+      'fixed issue with river amount displaying as NaN',
+      'made river prestige button responsive',
+      'styled scrollbar',
+      'fixed sidebar overlay to cover whole page'
+    ]
+  }
 ];
 
 const createChangelogs = obj => {

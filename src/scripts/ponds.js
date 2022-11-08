@@ -19,12 +19,16 @@ const generatePonds = () => {
 
   const mult = Decimal.pow(player.ponds.frog.multiplier.effectiveness, player.ponds.frog.multiplier.lvl).mul(Decimal.pow(player.ponds.frog.river.effectiveness, player.ponds.frog.river.lvl));
 
-  ponds.tier5.lvl = ponds.tier5.lvl.add(ponds.tier6.lvl.div(speed).mul(ponds.tier6.mult).mul(mult));
+  player.frogAmount = player.frogAmount.add(ponds.tier1.lvl.div(speed).mul(ponds.tier1.mult).mul(mult));
   ponds.tier1.lvl = ponds.tier1.lvl.add(ponds.tier2.lvl.div(speed).mul(ponds.tier2.mult).mul(mult));
   ponds.tier2.lvl = ponds.tier2.lvl.add(ponds.tier3.lvl.div(speed).mul(ponds.tier3.mult).mul(mult));
   ponds.tier3.lvl = ponds.tier3.lvl.add(ponds.tier4.lvl.div(speed).mul(ponds.tier4.mult).mul(mult));
   ponds.tier4.lvl = ponds.tier4.lvl.add(ponds.tier5.lvl.div(speed).mul(ponds.tier5.mult).mul(mult));
-  player.frogAmount = player.frogAmount.add(ponds.tier1.lvl.div(speed).mul(ponds.tier1.mult).mul(mult));
+  ponds.tier5.lvl = ponds.tier5.lvl.add(ponds.tier6.lvl.div(speed).mul(ponds.tier6.mult).mul(mult));
+  ponds.tier6.lvl = ponds.tier6.lvl.add(ponds.tier7.lvl.div(speed).mul(ponds.tier7.mult).mul(mult));
+  ponds.tier7.lvl = ponds.tier7.lvl.add(ponds.tier8.lvl.div(speed).mul(ponds.tier8.mult).mul(mult));
+  ponds.tier8.lvl = ponds.tier8.lvl.add(ponds.tier9.lvl.div(speed).mul(ponds.tier9.mult).mul(mult));
+  ponds.tier9.lvl = ponds.tier9.lvl.add(ponds.tier10.lvl.div(speed).mul(ponds.tier10.mult).mul(mult));
 };
 
 const updatePondUI = tier => {
