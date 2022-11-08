@@ -5,7 +5,6 @@ const updateUI = () => {
   );
 
   if (player.currentPage === 'page-main') {
-    console.log('hello');
     updateMultiplierUI();
     updateRiverUI();
     updatePondUI(1);
