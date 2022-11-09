@@ -10,6 +10,10 @@ const localReset = () => {
   player.ponds.frog.tier4.lvl = new Decimal('0');
   player.ponds.frog.tier5.lvl = new Decimal('0');
   player.ponds.frog.tier6.lvl = new Decimal('0');
+  player.ponds.frog.tier7.lvl = new Decimal('0');
+  player.ponds.frog.tier8.lvl = new Decimal('0');
+  player.ponds.frog.tier9.lvl = new Decimal('0');
+  player.ponds.frog.tier10.lvl = new Decimal('0');
 
   player.ponds.frog.tier1.cost = new Decimal('10');
   player.ponds.frog.tier2.cost = new Decimal('100');
