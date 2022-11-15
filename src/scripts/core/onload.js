@@ -18,5 +18,6 @@ window.onload = () => {
   loadDataSafe();
   showUnlocked();
   if (player.settings.saveLastPage) switchPage(player.currentPage);
+  if (!player.settings.saveLastPage) switchPage('page-main');
   updateUI();
 };

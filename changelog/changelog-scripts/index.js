@@ -25,7 +25,8 @@ const changelogArray = [
   { name: 'initial-prerelease-v0.0.9a', date: '11/8/2022', content: ['frog amount can bow be seen on any page', 'plans for a tutorial page', 'changelog can be accesed through sidebar'] },
   { name: 'initial-prerelease-v0.0.9b', date: '11/8/2022', content: ['added babel'] },
   { name: 'initial-prerelease-v0.0.9c', date: '11/8/2022', content: ['fixed format not working which broke game', 'removed random console log'] },
-  { name: 'initial-prerelease-v0.0.9d', date: '11/9/2022', content: ['fixed 7th, 8th, 9th, 10th not resetting properly on local reset'] }
+  { name: 'initial-prerelease-v0.0.9d', date: '11/9/2022', content: ['fixed 7th, 8th, 9th, 10th not resetting properly on local reset'] },
+  { name: 'initial-prerelease-v0.0.9e', date: '11/15/2022', content: ['fixed issue with ui not displaying text correctly'] }
 ];
 
 const createChangelogs = obj => {

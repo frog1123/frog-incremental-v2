@@ -38,7 +38,7 @@ let player = {
         amountBought: new Decimal('0')
       },
       tier4: {
-        lvl: new Decimal('20'),
+        lvl: new Decimal('0'),
         cost: new Decimal('1e8'),
         costIncrease: new Decimal('100'),
         mult: new Decimal('1'),
