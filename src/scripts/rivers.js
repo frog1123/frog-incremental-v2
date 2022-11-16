@@ -4,10 +4,13 @@ const updateRiverUI = () => {
   document.getElementById('river-amount-text').textContent = fvnd(player.ponds.frog.river.lvl);
   document.getElementById('river-requires-text').textContent = `${player.ponds.frog.river.cost} ${pondnum[player.ponds.frog.highestTier - 1]}`;
   if (player.ponds.frog.highestTier < 10) {
-    document.getElementById('river-btn-text').textContent = `Local reset to unlock ${pondnum[player.ponds.frog.highestTier]} Pond and give all ponds a ×${
-      player.ponds.frog.river.effectiveness
-    } multiplier`;
-  } else document.getElementById('river-btn-text').textContent = `Local reset to unlock give all ponds a ×${player.ponds.frog.river.effectiveness} multiplier`;
+    document.getElementById('river-btn-text').textContent = `Local reset to unlock ${pondnum[player.ponds.frog.highestTier]} Pond and give all ponds a ×${player.ponds.frog.river.effectiveness.mul(
+      Decimal.pow(player.ponds.frog.lake.riverEffectiveness, player.ponds.frog.lake.lvl)
+    )} multiplier`;
+  } else
+    document.getElementById('river-btn-text').textContent = `Local reset to unlock give all ponds a ×${player.ponds.frog.river.effectiveness.mul(
+      Decimal.pow(player.ponds.frog.lake.riverEffectiveness, player.ponds.frog.lake.lvl)
+    )} multiplier`;
 
   if (player.ponds.frog[`tier${player.ponds.frog.highestTier}`].lvl.gte(player.ponds.frog.river.cost)) {
     document.getElementById('river-prestige-btn').classList.remove('button-disabled');

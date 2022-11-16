@@ -7,6 +7,7 @@ const updateUI = () => {
   if (player.currentPage === 'page-main') {
     updateMultiplierUI();
     updateRiverUI();
+    updateLakeUI();
     updatePondUI(1);
     updatePondUI(2);
     updatePondUI(3);
@@ -23,6 +24,7 @@ const updateUI = () => {
 };
 
 document.getElementById('river-prestige-btn').onclick = () => upgradeRiver();
+document.getElementById('lake-prestige-btn').onclick = () => upgradeLake();
 document.getElementById('frog-pond-multiplier-buy-btn').onclick = () => upgradeMultiplier();
 document.getElementById('frog-pond-multiplier-buy-max-btn').onclick = () => upgradeMultiplierMax();
 document.getElementById('pond-t1-buy-btn').onclick = () => upgradePond(1);

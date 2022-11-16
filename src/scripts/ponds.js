@@ -17,7 +17,10 @@ const generatePonds = () => {
   const speed = 1000 / player.devSettings.loopSpeed;
   let ponds = player.ponds.frog;
 
-  const mult = Decimal.pow(player.ponds.frog.multiplier.effectiveness, player.ponds.frog.multiplier.lvl).mul(Decimal.pow(player.ponds.frog.river.effectiveness, player.ponds.frog.river.lvl));
+  const mult = Decimal.pow(
+    player.ponds.frog.multiplier.effectiveness.mul(Decimal.pow(player.ponds.frog.lake.multiplierEffectiveness, player.ponds.frog.lake.lvl)),
+    player.ponds.frog.multiplier.lvl
+  ).mul(Decimal.pow(player.ponds.frog.river.effectiveness.mul(Decimal.pow(player.ponds.frog.lake.riverEffectiveness, player.ponds.frog.lake.lvl)), player.ponds.frog.river.lvl));
 
   player.frogAmount = player.frogAmount.add(ponds.tier1.lvl.div(speed).mul(ponds.tier1.mult).mul(mult));
   ponds.tier1.lvl = ponds.tier1.lvl.add(ponds.tier2.lvl.div(speed).mul(ponds.tier2.mult).mul(mult));
@@ -42,8 +45,8 @@ const updatePondUI = tier => {
   document.getElementById(`pond-t${tier}-cost-text`).textContent = fv(player.ponds.frog[`tier${tier}`].cost);
   document.getElementById(`pond-t${tier}-mult-text`).textContent = fv(
     player.ponds.frog[`tier${tier}`].mult
-      .mul(Decimal.pow(player.ponds.frog.multiplier.effectiveness, player.ponds.frog.multiplier.lvl))
-      .mul(Decimal.pow(player.ponds.frog.river.effectiveness, player.ponds.frog.river.lvl))
+      .mul(Decimal.pow(player.ponds.frog.multiplier.effectiveness.mul(Decimal.pow(player.ponds.frog.lake.multiplierEffectiveness, player.ponds.frog.lake.lvl)), player.ponds.frog.multiplier.lvl))
+      .mul(Decimal.pow(player.ponds.frog.river.effectiveness.mul(Decimal.pow(player.ponds.frog.lake.riverEffectiveness, player.ponds.frog.lake.lvl)), player.ponds.frog.river.lvl))
   );
   document.getElementById(`pond-t${tier}-amount-bought-text`).textContent = player.ponds.frog[`tier${tier}`].amountBought;
 

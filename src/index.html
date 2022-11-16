@@ -21,6 +21,7 @@
   <script src="scripts/ponds.js" defer></script>
   <script src="scripts/multiplier.js" defer></script>
   <script src="scripts/rivers.js" defer></script>
+  <script src="scripts/lakes.js" defer></script>
   <script src="scripts/resets.js" defer></script>
   <script src="scripts/core/loop.js" defer></script>
   <meta name="description" content="incremental game about frogs">
@@ -72,6 +73,7 @@
       </a>
     </div>
   </div>
+  <h1 id="dev-text" style="display: none;"></h1>
   <h1 id="frog-amount-text-container"><span id="frog-amount-text"></span> Frogs</h1>
   <p id="frog-gaining-text-container">Gaining <span id="frog-gaining-text"></span> Frogs/s</p>
   <div id="page-main" style="display: block;">
@@ -230,6 +232,15 @@
         </div>
         <button id="river-prestige-btn" class="prestige-btn green-prestige-btn">
           <p id="river-btn-text"></p>
+        </button>
+      </div>
+      <div class="prestige-btn-container">
+        <div class="prestige-info-container">
+          <p class="prestige-info-big-text"><span id="lake-amount-text"></span> Lakes</p>
+          <p class="prestige-info-small-text">Requires <span id="lake-requires-text"></span> Rivers</p>
+        </div>
+        <button id="lake-prestige-btn" class="prestige-btn green-prestige-btn">
+          <p id="lake-btn-text"></p>
         </button>
       </div>
     </div>

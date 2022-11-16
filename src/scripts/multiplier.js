@@ -38,8 +38,14 @@ const upgradeMultiplierMax = () => {
 
 const updateMultiplierUI = () => {
   document.getElementById('frog-pond-multiplier-buy-btn-cost-text').textContent = fv(player.ponds.frog.multiplier.cost);
-  document.getElementById('frog-pond-multiplier-effectiveness-text').textContent = fv(player.ponds.frog.multiplier.effectiveness);
-  document.getElementById('frog-pond-multiplier-current-multiplier-text').textContent = fv(Decimal.pow(player.ponds.frog.multiplier.effectiveness, player.ponds.frog.multiplier.lvl));
+  document.getElementById('frog-pond-multiplier-effectiveness-text').textContent = fv(
+    player.ponds.frog.multiplier.effectiveness.mul(Decimal.pow(player.ponds.frog.lake.multiplierEffectiveness, player.ponds.frog.lake.lvl))
+  );
+  document.getElementById('frog-pond-multiplier-current-multiplier-text').textContent = fv(
+    Decimal.pow(player.ponds.frog.multiplier.effectiveness.mul(Decimal.pow(player.ponds.frog.lake.multiplierEffectiveness, player.ponds.frog.lake.lvl)), player.ponds.frog.multiplier.lvl)
+  );
+
+  console.log(Decimal.pow(player.ponds.frog.lake.multiplierEffectiveness, player.ponds.frog.lake.lvl));
 
   if (player.frogAmount.lt(player.ponds.frog.multiplier.cost)) {
     document.getElementById('frog-pond-multiplier-buy-btn').classList.remove('default-multiplier-buy-btn');

@@ -88,3 +88,8 @@ button {
   margin-bottom: 10px;
   margin-top: 10px;
 }
+
+#dev-text {
+  width: max-content;
+  margin: auto;
+}

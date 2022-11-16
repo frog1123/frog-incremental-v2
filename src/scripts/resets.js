@@ -48,3 +48,10 @@ const localReset = () => {
   player.ponds.frog.tier9.amountBought = new Decimal('0');
   player.ponds.frog.tier10.amountBought = new Decimal('0');
 };
+
+const globalReset = () => {
+  localReset();
+
+  player.ponds.frog.river.lvl = new Decimal('0');
+  player.ponds.frog.river.cost = new Decimal('20');
+};
