@@ -45,8 +45,6 @@ const updateMultiplierUI = () => {
     Decimal.pow(player.ponds.frog.multiplier.effectiveness.mul(Decimal.pow(player.ponds.frog.lake.multiplierEffectiveness, player.ponds.frog.lake.lvl)), player.ponds.frog.multiplier.lvl)
   );
 
-  console.log(Decimal.pow(player.ponds.frog.lake.multiplierEffectiveness, player.ponds.frog.lake.lvl));
-
   if (player.frogAmount.lt(player.ponds.frog.multiplier.cost)) {
     document.getElementById('frog-pond-multiplier-buy-btn').classList.remove('default-multiplier-buy-btn');
     document.getElementById('frog-pond-multiplier-buy-btn').classList.add('button-disabled');

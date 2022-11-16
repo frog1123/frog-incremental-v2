@@ -13,6 +13,8 @@ window.onload = () => {
     if (predata === null) return;
     data = JSON.parse(atob(predata));
     loadData(data);
+
+    console.log(player);
   };
 
   loadDataSafe();
