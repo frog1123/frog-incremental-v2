@@ -5,6 +5,7 @@ const updateUI = () => {
   );
 
   if (player.currentPage === 'page-main') {
+    updatePondBuyTypeUI();
     updateMultiplierUI();
     updateRiverUI();
     updateLakeUI();
@@ -23,8 +24,7 @@ const updateUI = () => {
   setTimeout(updateUI, 50);
 };
 
-document.getElementById('river-prestige-btn').onclick = () => upgradeRiver();
-document.getElementById('lake-prestige-btn').onclick = () => upgradeLake();
+document.getElementById('frog-pond-buy-type-btn').onclick = () => togglePondBuyType();
 document.getElementById('frog-pond-multiplier-buy-btn').onclick = () => upgradeMultiplier();
 document.getElementById('frog-pond-multiplier-buy-max-btn').onclick = () => upgradeMultiplierMax();
 document.getElementById('pond-t1-buy-btn').onclick = () => upgradePond(1);
@@ -37,6 +37,9 @@ document.getElementById('pond-t7-buy-btn').onclick = () => upgradePond(7);
 document.getElementById('pond-t8-buy-btn').onclick = () => upgradePond(8);
 document.getElementById('pond-t9-buy-btn').onclick = () => upgradePond(9);
 document.getElementById('pond-t10-buy-btn').onclick = () => upgradePond(10);
+
+document.getElementById('river-prestige-btn').onclick = () => upgradeRiver();
+document.getElementById('lake-prestige-btn').onclick = () => upgradeLake();
 
 const switchPage = pageToSwitchTo => {
   // hide all pages

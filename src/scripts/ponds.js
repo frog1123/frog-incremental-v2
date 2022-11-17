@@ -1,9 +1,14 @@
-const upgradePond = tier => {
-  if (player.frogAmount.gte(player.ponds.frog[`tier${tier}`].cost)) {
+const upgradePond = (tier, amount = player.ponds.frog.buyAmount) => {
+  if (player.frogAmount.gte(player.ponds.frog[`tier${tier}`].cost.mul(amount === 1 ? 1 : Decimal.pow(player.ponds.frog[`tier${tier}`].costIncrease, amount / 10)))) {
     playSound();
-    player.frogAmount = player.frogAmount.sub(player.ponds.frog[`tier${tier}`].cost);
-    player.ponds.frog[`tier${tier}`].lvl = player.ponds.frog[`tier${tier}`].lvl.add('1');
-    player.ponds.frog[`tier${tier}`].amountBought = player.ponds.frog[`tier${tier}`].amountBought.add('1');
+    player.frogAmount = player.frogAmount.sub(player.ponds.frog[`tier${tier}`].cost.mul(amount === 1 ? 1 : Decimal.pow(player.ponds.frog[`tier${tier}`].costIncrease, amount / 10)));
+    player.ponds.frog[`tier${tier}`].lvl = player.ponds.frog[`tier${tier}`].lvl.add(new Decimal('1').mul(amount));
+    if (amount === 1) player.ponds.frog[`tier${tier}`].amountBought = player.ponds.frog[`tier${tier}`].amountBought.add('1');
+
+    if (amount > 1) {
+      player.ponds.frog[`tier${tier}`].cost = player.ponds.frog[`tier${tier}`].cost.mul(Decimal.pow(player.ponds.frog[`tier${tier}`].costIncrease, Decimal.log10(amount)));
+      player.ponds.frog[`tier${tier}`].mult = player.ponds.frog[`tier${tier}`].mult.mul(Decimal.pow('2', amount / 10));
+    }
 
     if (player.ponds.frog[`tier${tier}`].amountBought.eq('10')) {
       player.ponds.frog[`tier${tier}`].cost = player.ponds.frog[`tier${tier}`].cost.mul(player.ponds.frog[`tier${tier}`].costIncrease);
@@ -34,7 +39,7 @@ const generatePonds = () => {
   ponds.tier9.lvl = ponds.tier9.lvl.add(ponds.tier10.lvl.div(speed).mul(ponds.tier10.mult).mul(mult));
 };
 
-const updatePondUI = tier => {
+const updatePondUI = (tier, amount = player.ponds.frog.buyAmount) => {
   document.getElementById(`pond-t${tier}-generating-text`).textContent = fv(
     player.ponds.frog[`tier${tier}`].lvl
       .mul(player.ponds.frog[`tier${tier}`].mult)
@@ -42,7 +47,9 @@ const updatePondUI = tier => {
       .mul(Decimal.pow(player.ponds.frog.river.effectiveness, player.ponds.frog.river.lvl))
   );
   document.getElementById(`pond-t${tier}-lvl-text`).textContent = fvnd(player.ponds.frog[`tier${tier}`].lvl);
-  document.getElementById(`pond-t${tier}-cost-text`).textContent = fv(player.ponds.frog[`tier${tier}`].cost);
+  document.getElementById(`pond-t${tier}-cost-text`).textContent = fv(
+    player.ponds.frog[`tier${tier}`].cost.mul(amount === 1 ? 1 : Decimal.pow(player.ponds.frog[`tier${tier}`].costIncrease, amount / 10))
+  );
   document.getElementById(`pond-t${tier}-mult-text`).textContent = fv(
     player.ponds.frog[`tier${tier}`].mult
       .mul(Decimal.pow(player.ponds.frog.multiplier.effectiveness.mul(Decimal.pow(player.ponds.frog.lake.multiplierEffectiveness, player.ponds.frog.lake.lvl)), player.ponds.frog.multiplier.lvl))
@@ -50,11 +57,42 @@ const updatePondUI = tier => {
   );
   document.getElementById(`pond-t${tier}-amount-bought-text`).textContent = player.ponds.frog[`tier${tier}`].amountBought;
 
-  if (player.frogAmount.lt(player.ponds.frog[`tier${tier}`].cost)) {
+  if (player.frogAmount.lt(player.ponds.frog[`tier${tier}`].cost.mul(amount === 1 ? 1 : Decimal.pow(player.ponds.frog[`tier${tier}`].costIncrease, amount / 10)))) {
     document.getElementById(`pond-t${tier}-buy-btn`).classList.add('button-disabled');
     document.getElementById(`pond-t${tier}-buy-btn`).classList.remove('default-pond-buy-btn');
   } else {
     document.getElementById(`pond-t${tier}-buy-btn`).classList.add('default-pond-buy-btn');
     document.getElementById(`pond-t${tier}-buy-btn`).classList.remove('button-disabled');
   }
+};
+
+const updatePondBuyTypeUI = () => {
+  document.getElementById('frog-pond-buy-type-text').textContent = player.ponds.frog.buyAmount;
+};
+
+const togglePondBuyType = () => {
+  if (player.ponds.frog.buyAmount === 1) {
+    player.ponds.frog.buyAmount = 10;
+    return;
+  }
+  if (player.ponds.frog.buyAmount === 10) {
+    player.ponds.frog.buyAmount = 100;
+    return;
+  }
+  if (player.ponds.frog.buyAmount === 100) {
+    player.ponds.frog.buyAmount = 1000;
+    return;
+  }
+  if (player.ponds.frog.buyAmount === 1000) {
+    player.ponds.frog.buyAmount = 1;
+    return;
+  }
+  // if (player.ponds.frog.buyAmount === 1000) {
+  //   player.ponds.frog.buyAmount = 'max';
+  //   return;
+  // }
+  // if (player.ponds.frog.buyAmount === 'max') {
+  //   player.ponds.frog.buyAmount = 1;
+  //   return;
+  // }
 };

@@ -3,6 +3,7 @@ let player = {
   currentPage: 'page-main',
   ponds: {
     frog: {
+      buyAmount: 1,
       highestTier: 4,
       multiplier: {
         lvl: new Decimal('0'),

@@ -28,7 +28,8 @@ const changelogArray = [
   { name: 'initial-prerelease-v0.0.9d', date: '11/9/2022', content: ['fixed 7th, 8th, 9th, 10th not resetting properly on local reset'] },
   { name: 'initial-prerelease-v0.0.9e', date: '11/15/2022', content: ['fixed issue with ui not displaying text correctly'] },
   { name: 'initial-prerelease-v0.0.10a', date: '11/15/2022', updateName: 'The Lake Update', content: ['added lakes (prestige system above rivers)'] },
-  { name: 'initial-prerelease-v0.0.10b', date: '11/15/2022', content: ['fixed issue with saves not loading correctly'] }
+  { name: 'initial-prerelease-v0.0.10b', date: '11/15/2022', content: ['fixed issue with saves not loading correctly'] },
+  { name: 'initial-prerelease-v0.0.11a', date: '11/16/2022', content: ['added toggle buy amount button for ponds'] }
 ];
 
 const createChangelogs = obj => {

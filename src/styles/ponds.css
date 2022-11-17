@@ -138,3 +138,24 @@
     display: none;
   }
 }
+
+.pond-buy-type-container {
+  width: 100%;
+}
+
+.pond-buy-type-container button {
+  display: flex;
+  margin: auto;
+  width: 120px;
+  height: 36px;
+  background-color: var(--background-color);
+  border-radius: 10px;
+  border: 2px solid var(--color-disabled);
+  justify-content: center;
+  align-items: center;
+}
+
+.pond-buy-type-container button p {
+  color: var(--default-text-color);
+  margin: 0;
+}
